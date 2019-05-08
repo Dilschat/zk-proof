@@ -1,0 +1,30 @@
+[package]
+name = "zk-proof"
+version = "0.1.0"
+authors = ["Dilschat <dilschat@yandex.ru>"]
+edition = "2018"
+
+[dependencies]
+curve25519-dalek = { version = "1", features = ["serde"] }
+subtle = "2"
+sha3 = "0.8"
+digest = "0.8"
+rand = "0.6"
+byteorder = "1"
+serde = "1"
+serde_derive = "1"
+failure = "0.1"
+merlin = "1"
+clear_on_drop = "0.2"
+
+[dependencies.bulletproofs]
+#path = "../bulletproofs"
+git = "https://github.com/lovesh/bulletproofs"
+branch = "smt"
+features = ["yoloproofs", "avx2_backend"]
+
+[dev-dependencies]
+hex = "0.3"
+criterion = "0.2"
+bincode = "1"
+rand_chacha = "0.1"
